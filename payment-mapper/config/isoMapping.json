@@ -1,0 +1,50 @@
+{
+  "default": "96",
+  "mappings": [
+  {
+    "match": { "message_contains": "success" },
+    "iso": "00",
+    "description": "Success"
+  },
+  {
+    "match": { "message_contains": "insufficient" },
+    "iso": "51",
+    "description": "Insufficient funds"
+  },
+  {
+    "match": { "message_contains": "general" },
+    "iso": "96",
+    "description": "General payment processing error"
+  },
+  {
+    "match": { "message_contains": "refund failed" },
+    "iso": "98",
+    "description": "Refund failed"
+  },
+  {
+    "match": { "message_contains": "limit exceeded" },
+    "iso": "61",
+    "description": "Limit exceeded"
+  },
+  {
+    "match": { "message_contains": "expired" },
+    "iso": "54",
+    "description": "Expired card"
+  },
+  {
+    "match": { "message_contains": "lost" },
+    "iso": "43",
+    "description": "Card lost or stolen"
+  },
+  {
+    "match": { "message_contains": "high risk" },
+    "iso": "R1",
+    "description": "High risk error"
+  },
+  {
+    "match": { "message_contains": "invalid" },
+    "iso": "14",
+    "description": "Invalid card"
+  }
+ ]
+}

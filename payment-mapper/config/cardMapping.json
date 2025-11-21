@@ -1,0 +1,23 @@
+{
+  "cards": {
+    "5425233430109903": "00",
+    "4000000000001000": "51",
+    "4347699988887770": "96",
+    "4000160000004140": "98",
+    "4009830000001980": "61",
+    "4242420000000090": "54",
+    "5114610000004770": "43",
+    "5121220000006920": "R1"
+  },
+  "descriptions": {
+    "00": "Success",
+    "51": "Insufficient funds",
+    "96": "System malfunction",
+    "98": "Refund failed",
+    "61": "Limit exceeded",
+    "54": "Expired card",
+    "43": "Lost or stolen card",
+    "R1": "High risk transaction",
+    "05": "Do Not Honor"
+  }
+}

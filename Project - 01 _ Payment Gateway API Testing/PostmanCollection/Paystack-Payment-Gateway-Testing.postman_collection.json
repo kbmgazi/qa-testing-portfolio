@@ -1,0 +1,1217 @@
+{
+	"info": {
+		"_postman_id": "c3ddece5-8f22-4fac-8183-362a7ff88ebe",
+		"name": "Paystack-Payment-Gateway-Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47394614",
+		"_collection_link": "https://mgazikb-48955.postman.co/workspace/KB-MGAZI's-Team's-Workspace~059ed961-3e82-4d52-80ad-9a09f510f2d2/collection/47394614-c3ddece5-8f22-4fac-8183-362a7ff88ebe?action=share&source=collection_link&creator=47394614"
+	},
+	"item": [
+		{
+			"name": "Authorization API",
+			"item": [
+				{
+					"name": "ListOfTransactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1 ,\r\n    \"reference\": \"13fi3ukxhg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/transaction/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"transaction",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransactionInitialize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer SECRET_KEY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": \"52367\",\r\n  \"email\": \"test@example.com\",\r\n  \"card_number\": \"5425233430109903\",\r\n  \"cvv\": \"123\",\r\n  \"expiry_month\": \"12\",\r\n  \"expiry_year\": \"27\",\r\n  \"merchant\": {\r\n    \"merchant_id\": \"MERCH001\",\r\n    \"name\": \"Mgazi Enterprise\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/transaction/initialize",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"transaction",
+								"initialize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransactionVerify",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/transaction/verify/6nygacn5oc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"transaction",
+								"verify",
+								"6nygacn5oc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExportTransaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/transaction/export",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"transaction",
+								"export"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dispute API",
+			"item": [
+				{
+					"name": "ListDisputes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/dispute",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"dispute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchDispute",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/dispute/2867",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"2867"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListTransactionDisputes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/dispute/transaction/2867",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"transaction",
+								"2867"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResolveDispute",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"resolution\": \"merchant-accepted\",\r\n        \"message\": \"Merchant accepted\", \r\n        \"uploaded_filename\": \"qesp8a4df1xejihd9x5q\", \r\n        \"refund_amount\": 1002 \r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/dispute/2867/resolve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"2867",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExportDisputes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/dispute/export",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddEvidence",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "YOUR_SECRET_KEY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"customer_email\": \"cusgmail.com\",\r\n      \"customer_name\": \"Mensah King\",\r\n      \"customer_phone\": \"0802345167\",\r\n      \"service_details\": \"claim for buying product\",\r\n      \"delivery_address\": \"3a ladoke street ogbomoso\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/dispute/99999/evidence",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"99999",
+								"evidence"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUploadURL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "YOUR_SECRET_KEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/dispute/2867/upload_url?upload_filename=filename.ext",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dispute",
+								"2867",
+								"upload_url"
+							],
+							"query": [
+								{
+									"key": "upload_filename",
+									"value": "filename.ext"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Refunds API",
+			"item": [
+				{
+					"name": "CreateRefund",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":  \"\",\r\n    \"transaction\": 5550269314 \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/refund",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetryRefund",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refund_account_details\": {\r\n    \"currency\": \"ZAR\",\r\n    \"account_number\": \"1234567890\",\r\n    \"bank_id\": \"9\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/refund/retry_with_customer_details/RFD_100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"refund",
+								"retry_with_customer_details",
+								"RFD_100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListRefunds",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.paystack.co/refund",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"refund"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verification API",
+			"item": [
+				{
+					"name": "ResolveAccount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/bank/verify?account_number=0022728151&bank_code=063",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"bank",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "account_number",
+									"value": "0022728151"
+								},
+								{
+									"key": "bank_code",
+									"value": "063"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bank_code\": \"632005\",\r\n  \"country_code\": \"ZA\",\r\n  \"account_number\": \"0123456789\",\r\n  \"account_name\": \"Ann Bron\",\r\n  \"account_type\": \"personal\",\r\n  \"document_type\": \"identityNumber\",\r\n  \"document_number\": \"1234567890123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/bank/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"bank",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResolveCardBIN",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/decision/bin/408408",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"decision",
+								"bin",
+								"408408"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers API",
+			"item": [
+				{
+					"name": "CreateCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"customer@example.com\",\r\n    \"first_name\": \"Cus\",\r\n    \"last_name\": \"stomer\",\r\n    \"phone\": \"+23481256789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/customer",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_xxxxxxxxxxxxxxxxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.paystack.co/customer/3201614824682365",
+							"protocol": "https",
+							"host": [
+								"api",
+								"paystack",
+								"co"
+							],
+							"path": [
+								"customer",
+								"3201614824682365"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dedicated Virtual Accounts API",
+			"item": [
+				{
+					"name": "CreateDedicatedVirtualAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": \"4353657457\",\r\n    \"bank_code\": \"343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/dedicated_account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dedicated_account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AssignDedicatedVirtualAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "sk_test_1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n      \"customer_id\": \"320161482\",\r\n      \"email\": \"janedoe@test.com\",\r\n      \"first_name\": \"Jane\",\r\n      \"middle_name\": \"Karen\",\r\n      \"last_name\": \"Doe\",\r\n      \"phone\": \"+2348100000000\",\r\n      \"preferred_bank\": \"test-bank\",\r\n      \"country\": \"RSA\" ,\r\n      \"dva_id\": \"DVA_176366040437\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/dedicated_account/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dedicated_account",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListDedicatedVirtualAccounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_SECRET_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/dedicated_account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dedicated_account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
